@@ -1,0 +1,106 @@
+
+@import url(&#39;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css&#39;);
+
+/* 🔍 Main search container */
+/* Main container for search icon */
+.search-container {
+  position: fixed;
+  top: 20px;
+  right: 20px; /* প্রাথমিকভাবে ডানদিকে */
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* icon centered vertically & horizontally */
+  z-index: 9999;
+  transition: all 0.4s ease;
+}
+
+/* Icon */
+.search-icon {
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* icon ভিতরে সামান্য ডানদিকে */
+  margin-left: 13px; /* adjust as needed */
+}
+
+/* Form wrapper */
+.search-form {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+/* 🔤 Input field */
+.search-input {
+  width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
+  padding: 0;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+/* 🚀 Go button */
+.go-btn {
+  display: none;
+  position: absolute;
+  right: 10px; /* ডান থেকে gap রাখা হয়েছে */
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-size: 16px;
+  padding: 8px 12px; /* Go বাটনের padding বৃদ্ধি করা হয়েছে */
+  border-radius: 25px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: background 0.3s ease;
+}
+
+.go-btn:hover {
+  background: rgba(0, 255, 255, 0.5);
+}
+
+/* 💥 Active (expanded) state */
+.search-container.active {
+  width: calc(100% - 90px); /* left/right 20px gap */
+  left: 20px;  /* স্ক্রিনের বাম থেকে gap */
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  padding-left: 50px; /* icon এর জন্য left padding */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.search-container.active .search-icon {
+  position: absolute;
+  left: 5px;
+  /*color: #00e6ff;*/
+  color: #34eb46;
+}
+
+.search-container.active .search-input {
+  width: 100%;
+  opacity: 1;
+  padding: 10px 70px 10px 0px;
+}
+
+.search-container.active .go-btn {
+  display: block;
+}
+
+body {
+  background: #0e0e0e;
+  height: 100vh;
+  margin: 0;
+}
